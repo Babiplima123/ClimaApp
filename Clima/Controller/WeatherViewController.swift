@@ -7,17 +7,51 @@
 
 import UIKit
 
-class WeatherViewController: UIViewController {
+class WeatherViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var conditionImageView: UIImageView!
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
+    @IBOutlet weak var searchTextField: UITextField!
+    
+    var weatherManager = WheatherManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        searchTextField.delegate = self
     }
 
-
+    @IBAction func seachPressed(_ sender: UIButton) {
+        searchTextField.endEditing(true)
+        print(searchTextField.text!)
+    }
+    
+    //Este método nativo ele pergunta ViewController: "O usuário pressionou a tecla de enter do teclado o que devemos fazer?"
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        searchTextField.endEditing(true)
+        print(searchTextField.text!)
+        return true
+    }
+    
+    //Este método é para avisar a viewController que o usuário não interagiu com o campo de texto e aperteu um enter, ele avisa ao usuário que ele deve editar, deve escrever algo ali. 
+    
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        if textField.text != "" {
+            return true
+        } else {
+            textField.placeholder = "Type something"
+            return false
+        }
+    }
+    
+    //Este método nativo ele avisa a ViewController: "O usuário acabou de editar o campo de texto?" Assim que o usuário acabar de digitar, editar ele limpará o campo de texto
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if let city = searchTextField.text {
+        weatherManager.fetchWeather(cityName: city)
+    }
+        searchTextField.text = " "
+  }
 }
 
