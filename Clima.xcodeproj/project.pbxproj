@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		A1F1CAC829ECC92A007F8B2A /* WheatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F1CAC729ECC92A007F8B2A /* WheatherManager.swift */; };
+		A1F1CACA29F228E6007F8B2A /* WheatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F1CAC929F228E6007F8B2A /* WheatherData.swift */; };
+		A1F1CACC29F23CE1007F8B2A /* WheatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F1CACB29F23CE1007F8B2A /* WheatherModel.swift */; };
 		ADAA27B1231BBFAF00365194 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAA27B0231BBFAF00365194 /* AppDelegate.swift */; };
 		ADAA27B3231BBFAF00365194 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAA27B2231BBFAF00365194 /* SceneDelegate.swift */; };
 		ADAA27B5231BBFAF00365194 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAA27B4231BBFAF00365194 /* WeatherViewController.swift */; };
@@ -20,6 +22,8 @@
 
 /* Begin PBXFileReference section */
 		A1F1CAC729ECC92A007F8B2A /* WheatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheatherManager.swift; sourceTree = "<group>"; };
+		A1F1CAC929F228E6007F8B2A /* WheatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheatherData.swift; sourceTree = "<group>"; };
+		A1F1CACB29F23CE1007F8B2A /* WheatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheatherModel.swift; sourceTree = "<group>"; };
 		ADAA27AD231BBFAF00365194 /* Clima.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clima.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADAA27B0231BBFAF00365194 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ADAA27B2231BBFAF00365194 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +51,8 @@
 			isa = PBXGroup;
 			children = (
 				A1F1CAC729ECC92A007F8B2A /* WheatherManager.swift */,
+				A1F1CAC929F228E6007F8B2A /* WheatherData.swift */,
+				A1F1CACB29F23CE1007F8B2A /* WheatherModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -174,8 +180,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADAA27B5231BBFAF00365194 /* WeatherViewController.swift in Sources */,
+				A1F1CACC29F23CE1007F8B2A /* WheatherModel.swift in Sources */,
 				ADAA27B1231BBFAF00365194 /* AppDelegate.swift in Sources */,
 				ADAA27B3231BBFAF00365194 /* SceneDelegate.swift in Sources */,
+				A1F1CACA29F228E6007F8B2A /* WheatherData.swift in Sources */,
 				A1F1CAC829ECC92A007F8B2A /* WheatherManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
