@@ -7,8 +7,8 @@
 
 import UIKit
 
-class WeatherViewController: UIViewController, UITextFieldDelegate {
-
+class WeatherViewController: UIViewController, UITextFieldDelegate, WeatherManagerDelegate {
+    
     @IBOutlet weak var conditionImageView: UIImageView!
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
@@ -19,6 +19,7 @@ class WeatherViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        weatherManager.delegate = self
         searchTextField.delegate = self
     }
 
@@ -47,11 +48,23 @@ class WeatherViewController: UIViewController, UITextFieldDelegate {
     }
     
     //Este método nativo ele avisa a ViewController: "O usuário acabou de editar o campo de texto?" Assim que o usuário acabar de digitar, editar ele limpará o campo de texto
+    
     func textFieldDidEndEditing(_ textField: UITextField) {
         if let city = searchTextField.text {
         weatherManager.fetchWeather(cityName: city)
     }
         searchTextField.text = " "
   }
+    
+    func didUpdateWeather(_ weatherManager: WheatherManager, weather: WeatherModel) {
+        DispatchQueue.main.async {
+            self.temperatureLabel.text = weather.temperatureString
+            self.conditionImageView.image = UIImage(systemName: weather.conditionName)
+        }
+    }
+    
+    func didFailWithError(error: Error) {
+     print(error)
+    }
 }
 
