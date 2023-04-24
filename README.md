@@ -38,6 +38,7 @@ git pull --rebase origin "branch" Atualiza a branch local com a branch remota
 git cherry-pick "hash-do-commit" Obs.: Para descobrir a hash do seus commits git log origin/"branch-local".."branch-remota"
 git push origin dev
 
+Qualquer outra dúvida sobre git http://git-scm.com/documentation
 
 
 
