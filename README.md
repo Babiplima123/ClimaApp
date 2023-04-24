@@ -100,12 +100,12 @@ Após ser desenvolvida todas as task features e ter sido realizadas todas as an�
 Comando para criação de nova branch Realese. 
 git checkout -b "realese"
 
+Após acabar a etapa de testes finais e correções de Bug, subir a versão da branch realease atualizada com todas as possíveis correções de bugs e mergear com a master. 
+Por fim gerar versão atualizada a partir da master para a produçõo, subindo o projeto para produção.
+
 Caso seja encontrado Bug abrir branch bugfix a partir da branch realease
 
 git checkout -b "bugfix-numero-do-card-do-bug"
-
-Após acabar a etapa de testes finais e correções de Bug, subir a versão da branch realease atualizada com todas as possíveis correções de bugs e mergear com a master. 
-Após gerar versão atualizada a partir da master para a produçõo subir para produção 
 
 
 Qualquer outra dúvida sobre git http://git-scm.com/documentation
