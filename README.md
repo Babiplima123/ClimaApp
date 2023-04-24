@@ -10,7 +10,10 @@ Abaixo o grafico do repositório:
 
 ![Padrão WorkFlow do Projeto](https://codigomaromba.files.wordpress.com/2019/01/gitflow-1.png)
 
-Indentificação do chamado no trello
+Exemplo de chamado no GitHub Projects
+
+![Cards GitHub Project}(https://docs.github.com/assets/cb-110288/images/help/projects/project-board-basic-kanban-template.png)
+
 
 
 
