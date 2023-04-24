@@ -12,7 +12,7 @@ Abaixo o grafico do repositório:
 
 Exemplo de chamado no GitHub Projects
 
-![Cards GitHub Project}(https://docs.github.com/assets/cb-110288/images/help/projects/project-board-basic-kanban-template.png)
+![Cards GitHub Project](https://docs.github.com/assets/cb-110288/images/help/projects/project-board-basic-kanban-template.png)
 
 
 
