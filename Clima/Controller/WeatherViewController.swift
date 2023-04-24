@@ -7,7 +7,7 @@
 
 import UIKit
 
-class WeatherViewController: UIViewController, UITextFieldDelegate, WeatherManagerDelegate {
+class WeatherViewController: UIViewController {
     
     @IBOutlet weak var conditionImageView: UIImageView!
     @IBOutlet weak var temperatureLabel: UILabel!
@@ -15,28 +15,39 @@ class WeatherViewController: UIViewController, UITextFieldDelegate, WeatherManag
     @IBOutlet weak var searchTextField: UITextField!
     
     var weatherManager = WheatherManager()
+//  let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+   /*   locationManager.requestWhenInUseAuthorization()
+        locationManager.requestLocation()
+        
+        locationManager.delegate = self */
         weatherManager.delegate = self
         searchTextField.delegate = self
     }
 
+}
+
+//MARK: - UITextFieldDelegate
+
+extension WeatherViewController: UITextFieldDelegate {
+    
+    
     @IBAction func seachPressed(_ sender: UIButton) {
         searchTextField.endEditing(true)
         print(searchTextField.text!)
     }
     
-    //Este método nativo ele pergunta ViewController: "O usuário pressionou a tecla de enter do teclado o que devemos fazer?"
-    
+    //Este método implementado do UITextFieldDelegate, ele pergunta ViewController: "O usuário pressionou a tecla de enter do teclado o que devemos fazer?"
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         searchTextField.endEditing(true)
         print(searchTextField.text!)
         return true
     }
     
-    //Este método é para avisar a viewController que o usuário não interagiu com o campo de texto e aperteu um enter, ele avisa ao usuário que ele deve editar, deve escrever algo ali. 
+    //Este método é para avisar a viewController que o usuário não interagiu com o campo de texto e aperteu um enter, ele avisa ao usuário que ele deve editar, deve escrever algo ali.
     
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         if textField.text != "" {
@@ -56,6 +67,14 @@ class WeatherViewController: UIViewController, UITextFieldDelegate, WeatherManag
         searchTextField.text = " "
   }
     
+}
+
+
+//MARK: - WeatherManagerDelegate
+
+
+extension WeatherViewController: WeatherManagerDelegate {
+    
     func didUpdateWeather(_ weatherManager: WheatherManager, weather: WeatherModel) {
         DispatchQueue.main.async {
             self.temperatureLabel.text = weather.temperatureString
@@ -68,3 +87,17 @@ class WeatherViewController: UIViewController, UITextFieldDelegate, WeatherManag
     }
 }
 
+/*
+//MARK: -  CLLocationManagerDelegate
+
+
+extension WeatherViewController: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+       print("Got location data")
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(error)
+    }
+}
+*/
